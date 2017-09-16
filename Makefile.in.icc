@@ -6,8 +6,11 @@ CC=icc
 FC=ifort 
 LD=ifort
 
-# Compiler optimization flags.  You will definitely want to play with these!
-OPTFLAGS = -O3
+# Compiler optimization flags - Modifications:
+# -02 instead of risky -03
+# -ftree-vectorize to vectorize arethmetic operations
+# -funroll-loops to unroll loops
+OPTFLAGS = -O2 -ftree-vectorize -funroll-loops -ffast-math -march=core2 -mfpmath=sse -msse4 
 CFLAGS = -std=gnu99 
 FFLAGS = 
 LDFLAGS = -fopenmp -nofor_main

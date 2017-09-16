@@ -7,7 +7,7 @@ FC=gfortran
 LD=gfortran
 
 # Compiler optimization flags.  You will definitely want to play with these!
-OPTFLAGS = -O3 
+OPTFLAGS = -O2 -funroll-loops  -ffast-math -ftree-vectorize -msse2
 CFLAGS = -std=gnu99 
 FFLAGS =
 LDFLAGS = -fopenmp
